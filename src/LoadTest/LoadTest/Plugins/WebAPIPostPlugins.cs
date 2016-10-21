@@ -13,14 +13,19 @@ namespace LoadTest.Plugins
     {
         public override void PreRequest(object sender, PreRequestEventArgs e)
         {
-            FormPostHttpBody formBody = e.Request.Body as FormPostHttpBody;
-            if (formBody == null)
-            {
-                e.WebTest.AddCommentToResult("formBody is null");
-                return;
-            }
+            #region -- Plugin PreRequest --
 
-            formBody.FormPostParameters.Add("Name", "JamisLiao");
+            //FormPostHttpBody formBody = e.Request.Body as FormPostHttpBody;
+            //if (formBody == null)
+            //{
+            //    e.WebTest.AddCommentToResult("formBody is null");
+            //    return;
+            //}
+
+            //formBody.FormPostParameters.Add("Name", "JamisLiao");
+
+            #endregion
+
             base.PreRequest(sender, e);
         }
     }

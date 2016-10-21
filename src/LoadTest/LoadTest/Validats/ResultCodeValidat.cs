@@ -20,23 +20,26 @@ namespace LoadTest.Validats
 
         public override void Validate(object sender, ValidationEventArgs e)
         {
-            bool validated = false;
+            #region -- Validat --
 
-            var jsonString = e.Response.BodyString;
-            var json = JObject.Parse(jsonString);
-            this._resultCode = json.SelectToken(RequiredTagName).ToString();
-            if(this._resultCode == "200")
-            {
-                validated = true;
-            }
+            //bool validated = false;
 
-            e.IsValid = validated;
+            //var jsonString = e.Response.BodyString;
+            //var json = JObject.Parse(jsonString);
+            //this._resultCode = json.SelectToken(RequiredTagName).ToString();
+            //if(this._resultCode == "200")
+            //{
+            //    validated = true;
+            //}
 
-            // If the validation fails, set the error text that the user sees
-            if (!validated)
-            {
-                e.Message = string.Format("ResultCode : {0}", this._resultCode);
-            }
+            //e.IsValid = validated;
+
+            //if (!validated)
+            //{
+            //    e.Message = string.Format("ResultCode : {0}", this._resultCode);
+            //}
+
+            #endregion
         }
     }
 }
